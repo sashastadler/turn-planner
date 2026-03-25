@@ -17,7 +17,7 @@
                     Click="CharacterButton_Click">
                 <Button.Content>
                     <StackPanel>
-                        <Image Source=".\assets\cusdakesh.jpeg" Height="60" Width="60" />
+                        <Image Source=".\assets\cusdakesh.jpg" Height="80" Width="80" />
                         <TextBlock Text="Barbarian" HorizontalAlignment="Center"/>
                     </StackPanel>
                 </Button.Content>
