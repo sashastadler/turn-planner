@@ -1,12 +1,30 @@
 ﻿using System.Windows;
 using System.Windows.Controls;
+using System.IO;
+using System.Text.Json;
+using System.Collections.Generic;
 
 namespace TurnPlanner{
     public partial class MainWindow : Window
     {
+        private List<string> characterFiles = new();
+        private const string CharacterDirectory = "characters";
         public MainWindow()
         {
+            LoadCharacterFiles();
             InitializeComponent();
+        }
+
+        // Load character file names at startup
+        private void LoadCharacterFiles()
+        {
+            if (!Directory.Exists(CharacterDirectory))
+            {
+                Directory.CreateDirectory(CharacterDirectory);
+                return;
+            }
+
+            characterFiles = Directory.GetFiles(CharacterDirectory, "*.json").ToList();
         }
 
         // Handle character selection
@@ -39,7 +57,7 @@ namespace TurnPlanner{
         private void AddCharacterButton_Click(object sender, RoutedEventArgs e)
         {
             // This is a dummy button for now
-            MessageBox.Show("Add character functionality not implemented yet");
+            MessageBox.Show("This does nothing (yet)");
         }
 
         // Handle exit button
