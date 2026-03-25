@@ -46,7 +46,7 @@ namespace TurnPlanner
                     Tag = characterFile // Store file path for json parsing step
                 };
 
-                //TODO Add image
+                //TODO: Add image
                 //Image characterImage = new Image { Source = new BitmapImage(new Uri(".\assets\cusdakesh.jpg")), Height = 60, Width = 60 };
                 //stackPanel.Children.Add(characterImage);
 
@@ -87,7 +87,7 @@ namespace TurnPlanner
             // For now, just show a message
             MessageBox.Show($"Selected character: {characterName}");
 
-            //TODO - navigate to turn planning interface
+            //TODO: navigate to turn planning interface
             // Open json from button.Tag
             // NavigateToTurnPlanning(characterName);
         }
@@ -96,6 +96,7 @@ namespace TurnPlanner
         private void AddCharacterButton_Click(object sender, RoutedEventArgs e)
         {
             // This is a dummy button for now
+            // TODO: Add character creation? much later maybe
             MessageBox.Show("This does nothing (yet)");
         }
 
