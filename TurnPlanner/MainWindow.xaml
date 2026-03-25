@@ -12,17 +12,12 @@
         <TextBlock Text="Select Your Character" FontSize="16" FontWeight="Bold" 
                    HorizontalAlignment="Center" Margin="10" Grid.Row="0"/>
         
-        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button Name="btnBarbarian" Height="100" Width="100" Margin="10" 
-                    Click="CharacterButton_Click">
-                <Button.Content>
-                    <StackPanel>
-                        <Image Source=".\assets\cusdakesh.jpg" Height="80" Width="80" />
-                        <TextBlock Text="Barbarian" HorizontalAlignment="Center"/>
-                    </StackPanel>
-                </Button.Content>
-            </Button>
-        </StackPanel>
+        <ScrollViewer Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                      HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
+            <StackPanel Name="CharacterButtonsPanel" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <!-- Character buttons added here at startup -->
+            </StackPanel>
+        </ScrollViewer>
         
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
             <Button Name="btnAddCharacter" Content="Add Character" Height="30" Width="100" 
