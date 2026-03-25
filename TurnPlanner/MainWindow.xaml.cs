@@ -8,7 +8,7 @@ namespace TurnPlanner
 {
     public partial class MainWindow : Window
     {
-        private List<string> characterFiles = new();
+        private List<string> characterFiles = [];
         private const string CharacterDirectory = "characters";
         public MainWindow()
         {
@@ -27,7 +27,7 @@ namespace TurnPlanner
                 return;
             }
 
-            characterFiles = Directory.GetFiles(CharacterDirectory, "*.json").ToList();
+            characterFiles = [.. Directory.GetFiles(CharacterDirectory, "*.json")];
         }
 
         // Set character buttons
@@ -37,8 +37,8 @@ namespace TurnPlanner
 
             foreach (string characterFile in characterFiles)
             {
-                StackPanel stackPanel = new StackPanel();
-                Button characterButton = new Button
+                StackPanel stackPanel = new();
+                Button characterButton = new()
                 {
                     Height = 100,
                     Width = 100,
@@ -51,13 +51,12 @@ namespace TurnPlanner
                 //stackPanel.Children.Add(characterImage);
 
                 string characterName = Path.GetFileNameWithoutExtension(characterFile);
-                TextBlock textBlock = new TextBlock
-                {
-                    Text = characterName,
-                    HorizontalAlignment = HorizontalAlignment.Center
-                };
-
-                stackPanel.Children.Add(textBlock);
+                stackPanel.Children.Add(
+                    new TextBlock
+                    {
+                        Text = characterName,
+                        HorizontalAlignment = HorizontalAlignment.Center
+                    });
                 characterButton.Content = stackPanel;
                 characterButton.Click += CharacterButton_Click;
 
@@ -103,7 +102,7 @@ namespace TurnPlanner
         // Handle exit button
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
-            this.Close();
+            Close();
         }
         #endregion
     }
